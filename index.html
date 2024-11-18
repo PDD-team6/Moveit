@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loadshare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="contact-info">
+                <span>📞 +91-9353733327</span>
+                <span>📧 lokeshjreddy2403@gmail.com</span>
+            </div>
+            <div class="actions">
+                <a href="#">News/Blog</a>
+                <a href="login.html">Login</a>
+                <a href="#">Free Register</a>
+            </div>
+        </div>
+        <div class="logo-search">
+            <img src="images\logo.png" alt="Loadshare Logo" class="logo">
+            <input type="text" placeholder="Search">
+            <button type="button">🔍</button>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="#">Board</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">Calculator</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <img src="images\truck-banner.jpeg" alt="Truck Image" class="hero-image">
+            <div class="form-container">
+                <h2>POST YOUR LOAD DETAIL</h2>
+                <form id="loadForm">
+                    <div class="radio-group">
+                        <label><input type="radio" name="loadType" value="full" checked> Full Load (Above 3MT)</label>
+                        <label><input type="radio" name="loadType" value="part"> Part Load (Below 3MT)</label>
+                    </div>
+                    <input type="text" placeholder="Source City" name="from" required>
+                    <input type="text" placeholder="Destination City" name="to" required>
+                    <select name="material" required>
+                        <option value="" disabled selected>Select Material</option>
+                        <!-- Add more options here -->
+                    </select>
+                    <select name="weight" required>
+                        <option value="" disabled selected>Select Weight (MT)</option>
+                        <!-- Add more options here -->
+                    </select>
+                    <select name="truckType" required>
+                        <option value="" disabled selected>Select Truck Type</option>
+                        <!-- Add more options here -->
+                    </select>
+                    <select name="noOfTrucks" required>
+                        <option value="" disabled selected>Select No. of Trucks</option>
+                        <!-- Add more options here -->
+                    </select>
+                    <input type="date" name="scheduledDate" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <span>🚚</span>
+                <h3>23580</h3>
+                <p>Fleet Owners</p>
+            </div>
+            <div class="stat">
+                <span>👥</span>
+                <h3>17347</h3>
+                <p>Transport Contractors</p>
+            </div>
+            <div class="stat">
+                <span>💸</span>
+                <h3>11889</h3>
+                <p>Commission Agents</p>
+            </div>
+            <div class="stat">
+                <span>👥</span>
+                <h3>2025</h3>
+                <p>Transport Brokers</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="video-container">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="socialize">
+                    <span>SOCIALIZE</span>
+                    <div class="social-icons">
+                        <a href="#"><img src="path-to-facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="path-to-twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="path-to-linkedin-icon.png" alt="LinkedIn"></a>
+                        <a href="#"><img src="path-to-youtube-icon.png" alt="YouTube"></a>
+                        <a href="#"><img src="path-to-whatsapp-icon.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>ABOUT COMPANY</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Directory</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Free Register</a></li>
+                    <li><a href="#">Our Network</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>POLICY INFO</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Copyright</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">News/Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+               
+                <address>
+                    Lokesh J <br>
+                    #59,2 nd main,<br>
+                    Govindpuri Road, Yamuna Nagar,<br>
+                    Banglore- 560076.<br>
+                    <span>📞 +91-9353733327</span><br>
+                    <span>📧 lokeshjreddy2403@gmail.com</span>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© lokeshjreddy2403 | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
