@@ -1,8 +1,3 @@
----
-
-### ✅ `README.md`
-
-````markdown
 # Moveit 🚚
 
 **Moveit** is a smart truck booking platform inspired by Uber and Ola, designed to simplify logistics and goods transportation. It connects users with verified transport partners in real time, offering a smooth and secure booking experience.
@@ -53,15 +48,13 @@ We use PostHog to monitor and improve user experience with:
 - Node.js & npm (if applicable for frontend)
 - MySQL 8+
 - Git
-
+___
 ### Setup Instructions
 
 1. **Clone the repo**
 
-   ```bash
    git clone https://github.com/PDD-team6/Moveit.git
    cd Moveit
-````
 
 2. **Backend Setup**
 
@@ -78,21 +71,6 @@ We use PostHog to monitor and improve user experience with:
 
    * Import the schema from `/database/schema.sql` (if present).
    * Make sure MySQL service is running.
-
----
-
-## 📂 Folder Structure
-
-```
-Moveit/
-│
-├── backend/                  # Spring Boot backend
-├── frontend/                 # Static or dynamic frontend
-├── database/                 # SQL schema & seed files
-├── analytics/                # PostHog event scripts
-├── README.md                 # Project documentation
-└── ...
-```
 
 ---
 
