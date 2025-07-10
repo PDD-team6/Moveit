@@ -1,22 +1,25 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors'); // ✅ ADD THIS
 const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
 const port = 3000;
 
-// ✅ Serve HTML and assets from 'public' folder
+// ✅ Enable CORS (allow all origins for now)
+app.use(cors());
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-// ✅ Supabase configuration (REPLACE THESE!)
+// ✅ Supabase configuration
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// ✅ POST endpoint to receive booking form submissions
+// ✅ Booking endpoint
 app.post('/api/book', async (req, res) => {
-  console.log('📥 Received form data:', req.body); // log incoming data
+  console.log('📥 Received form data:', req.body);
 
   try {
     const { data, error } = await supabase
@@ -38,9 +41,8 @@ app.post('/api/book', async (req, res) => {
         price_min: req.body.priceMin,
         price_max: req.body.priceMax,
         bidding_duration: req.body.biddingDuration,
-        allow_counter_offers: req.body.allowCounterOffers // ✅ fixed!
-      }])
-      
+        allow_counter_offers: req.body.allowCounterOffers
+      }]);
 
     if (error) {
       console.error('❌ Supabase insert error:', error);
@@ -55,8 +57,6 @@ app.post('/api/book', async (req, res) => {
   }
 });
 
-
-// ✅ Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
