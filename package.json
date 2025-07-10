@@ -1,0 +1,16 @@
+{
+  "name": "moveit",
+  "version": "1.0.0",
+  "description": "**Moveit** is a smart truck booking platform inspired by Uber and Ola, designed to simplify logistics and goods transportation. It connects users with verified transport partners in real time, offering a smooth and secure booking experience.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.4",
+    "express": "^5.1.0"
+  }
+}
