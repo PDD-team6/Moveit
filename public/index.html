@@ -2544,7 +2544,7 @@
       
           console.log("🚀 Full booking data:", data);
       
-          fetch('/api/book', {
+          fetch('https://moveit-vazr.onrender.com/api/book', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -2560,6 +2560,57 @@
         });
       });
       </script>
-             
+      <script>
+        document.querySelector('#register-truck-modal form').addEventListener('submit', async function (e) {
+          e.preventDefault();
+        
+          const form = e.target;
+        
+          const data = {
+            first_name: form.querySelector('[placeholder="Enter first name"]').value,
+            last_name: form.querySelector('[placeholder="Enter last name"]').value,
+            email: form.querySelector('[type="email"]').value,
+            phone: form.querySelector('[type="tel"]').value,
+            dob: form.querySelector('[type="date"]').value,
+            experience_years: parseInt(form.querySelector('[placeholder="0"]').value),
+            address: form.querySelector('[placeholder="Street address"]').value,
+            city: form.querySelector('[placeholder="City"]').value,
+            state: form.querySelector('[placeholder="State/Province"]').value,
+            postal_code: form.querySelector('[placeholder="Postal Code"]').value,
+            vehicle_type: form.querySelector('select').value,
+            make_model: form.querySelector('[placeholder="e.g. Ford F-150"]').value,
+            vehicle_year: parseInt(form.querySelector('[placeholder="e.g. 2020"]').value),
+            plate_number: form.querySelector('[placeholder="Enter plate number"]').value,
+            vin: form.querySelector('[placeholder="Vehicle Identification Number"]').value,
+            load_capacity: parseInt(form.querySelector('[placeholder="0"]').value),
+            cargo_dimensions: {
+              length: parseInt(form.querySelector('[placeholder="Length"]').value),
+              width: parseInt(form.querySelector('[placeholder="Width"]').value),
+              height: parseInt(form.querySelector('[placeholder="Height"]').value)
+            },
+            special_features: Array.from(form.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.nextElementSibling.innerText.trim()),
+            bank_name: form.querySelector('[placeholder="Enter bank name"]').value,
+            account_holder: form.querySelector('[placeholder="Enter account holder name"]').value,
+            account_number: form.querySelector('[placeholder="Enter account number"]').value,
+            ifsc: form.querySelector('[placeholder="Enter IFSC code"]').value,
+            branch_code: form.querySelector('[placeholder="Enter branch code"]').value,
+            payment_method: form.querySelector('input[name="payment"]:checked')?.nextElementSibling.innerText.trim() || '',
+            agreed_terms: form.querySelector('#terms').checked
+          };
+        
+          try {
+            const res = await fetch('https://moveit-vazr.onrender.com/api/register-truck', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+            });
+        
+            const result = await res.json();
+            alert(result.message || 'Submitted successfully!');
+          } catch (err) {
+            alert('❌ Failed to submit: ' + err.message);
+          }
+        });
+        </script>          
   </body>
 </html>
